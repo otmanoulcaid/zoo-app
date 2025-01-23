@@ -1,0 +1,25 @@
+services:
+  nginx:
+    build: ./nginx
+    image: nginx:xml
+    container_name: nginx
+    ports:
+      - 8000:80
+    depends_on:
+      - xslt
+      - xquery
+
+  xslt:
+    build: ./XSLTServer
+    image: xslt:xml
+    container_name: x-query-server
+
+  xquery:
+    build: ./xQueryServer
+    image: xquery:xml
+    container_name: xslt-server
+
+
+networks:
+
+volumes:
