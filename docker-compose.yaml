@@ -13,13 +13,27 @@ services:
     build: ./XSLTServer
     image: xslt:xml
     container_name: x-query-server
+    volumes:
+      -xsltv: /source/data
 
   xquery:
     build: ./xQueryServer
     image: xquery:xml
     container_name: xslt-server
-
-
-networks:
+    volumes:
+      -xqueryv: /source/data
 
 volumes:
+  xsltv:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: "./public/data/xslt"
+
+  xqueryv:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: "./public/data/xquery"

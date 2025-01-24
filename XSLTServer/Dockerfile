@@ -7,6 +7,6 @@ apt install g++ -y
 
 WORKDIR /source
 
-COPY ./source /source
+COPY ./source/ /source
 
-ENTRYPOINT ["make"]
+ENTRYPOINT ["make", ";"]
