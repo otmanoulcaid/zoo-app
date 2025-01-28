@@ -1,10 +1,10 @@
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 NAME = xQueryServer
 COMPILER = g++
 
 HEADERS = XQueryProcess.hpp Server.hpp
-SRCS = ${wildcard ./*.cpp}
-OBJ = ${SRCS:.cpp=.o}
+SRCS = $(wildcard ./*.cpp)
+OBJ = $(SRCS:.cpp=.o)
 
 YELLOW = \033[33m
 GREEN = \033[32m

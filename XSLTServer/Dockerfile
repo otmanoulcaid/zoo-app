@@ -9,4 +9,6 @@ WORKDIR /source
 
 COPY ./source/ /source
 
-ENTRYPOINT ["make", ";"]
+RUN mkdir -p source/data
+
+ENTRYPOINT ["make"]

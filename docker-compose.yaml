@@ -1,27 +1,35 @@
+version: '3.8'
+
 services:
   nginx:
     build: ./nginx
-    image: nginx:xml
+    image: custom-nginx:latest
     container_name: nginx
     ports:
       - 8000:80
     depends_on:
       - xslt
       - xquery
+    networks:
+      - my_network
 
   xslt:
     build: ./XSLTServer
-    image: xslt:xml
-    container_name: x-query-server
+    image: custom-xslt:latest
+    container_name: xslt-server
     volumes:
-      -xsltv: /source/data
+      - xsltv:/source/data
+    networks:
+      - my_network
 
   xquery:
     build: ./xQueryServer
-    image: xquery:xml
-    container_name: xslt-server
+    image: custom-xquery:latest
+    container_name: xquery-server
     volumes:
-      -xqueryv: /source/data
+      - xqueryv:/source/data
+    networks:
+      - my_network
 
 volumes:
   xsltv:
@@ -37,3 +45,7 @@ volumes:
       type: bind
       o: bind
       device: "./public/data/xquery"
+
+networks:
+  my_network:
+    driver: bridge

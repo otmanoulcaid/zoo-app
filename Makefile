@@ -2,7 +2,7 @@ NETWORKS		=	$$(docker network ls -q --filter "type=custom")
 IMAGES			=	$$(docker image ls -aq)
 VOLUMES			=	$$(docker volume ls -q)
 CONTAINERS		=	$$(docker ps -aq)
-COMPOSEFILE		=	docker-compose.yml
+COMPOSEFILE		=	docker-compose.yaml
 GREEN			=	\033[32m
 RESET			=	\033[0m
 cols			=	$$(tput cols)
@@ -11,25 +11,25 @@ SE				=	$$(printf "%-$(cols)s" "_" | tr ' ' '_')
 all: up
 
 up:
-	@docker compose $@ --build -d
+	@docker-compose $@ --build
 
 down:
-	@docker compose $@
+	@docker-compose $@
 
 build:
-	@docker compose $@
+	@docker-compose $@
 
 ps:
-	@docker compose $@ --all
+	@docker-compose $@ --all
 
 top:
-	@docker compose $@
+	@docker-compose $@
 
 stop:
-	@docker compose $@
+	@docker-compose $@
 
 restart:
-	@docker compose $@
+	@docker-compose $@
 
 ls:
 	@echo $(SE) && docker images && echo $(SE) && docker ps --all

@@ -99,7 +99,7 @@ std::string Server::getRequestedResource()
     std::istringstream requestStream(stringBuffer);
 
     if (std::getline(requestStream, resource, ' ') && std::getline(requestStream, resource, ' '))
-        return resource;
+        return "data/" + resource;
 
     return "/";
 }
