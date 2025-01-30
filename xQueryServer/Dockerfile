@@ -1,14 +1,14 @@
-FROM debian:stable-slim
+FROM openjdk:21-alpine
 
-RUN apt update -y && \
-apt install basex -y && \
-apt install make -y && \
-apt install g++ -y
+RUN apk update -y && \
+apk add basex -y && \
+apk add make -y && \
+apk add g++ -y
 
 WORKDIR /source
 
 COPY ./source/ /source
 
-RUN mkdir -p source/data
+RUN mkdir data
 
 ENTRYPOINT ["make"]

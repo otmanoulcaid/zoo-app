@@ -1,6 +1,6 @@
-FROM debian:stable-slim
+FROM openjdk:21-alpine
 
-RUN apt update -y && apt install nginx -y
+RUN apk add --no-cache nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

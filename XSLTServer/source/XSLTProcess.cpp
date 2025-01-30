@@ -39,7 +39,7 @@ void    XSLTProcess::processRequest()
     else if (!pid)
             close(pip[0]), execute(pip[1]);
     else
-        close(pip[1]), readFromPipe(pip[0]);
+        close(pip[1]), wait(NULL), readFromPipe(pip[0]);
 }
 
 std::string XSLTProcess::getResponse()
