@@ -1,4 +1,4 @@
-FROM openjdk:21-slim
+FROM debian:stable-slim
 
 RUN apt update && apt install -y nginx
 

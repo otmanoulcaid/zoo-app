@@ -12,6 +12,4 @@ WORKDIR /source
 
 COPY ./source/ /source
 
-RUN mkdir data
-
 ENTRYPOINT ["make"]

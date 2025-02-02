@@ -1,10 +1,87 @@
 <?xml version="1.0"?>
-
-<etudiants>
-    <etudiant cne="">
-        <nom></nom>
-        <filiere></filiere>
-        <smestre></smestre>
-        <img src=""/>
-    </etudiant>
-</etudiants>
+<animaux>
+    <animal>
+        <id>1</id>
+        <nom>Max</nom>
+        <espece>Chien</espece>
+        <race>Golden Retriever</race>
+        <age>5</age>
+        <proprietaire>
+            <nom>Dupont</nom>
+            <prenom>Jean</prenom>
+            <contact>jean.dupont@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>2</id>
+        <nom>Mimi</nom>
+        <espece>Chat</espece>
+        <race>Siamois</race>
+        <age>3</age>
+        <proprietaire>
+            <nom>Martin</nom>
+            <prenom>Claire</prenom>
+            <contact>claire.martin@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>3</id>
+        <nom>Rio</nom>
+        <espece>Oiseau</espece>
+        <race>Perroquet</race>
+        <age>2</age>
+        <proprietaire>
+            <nom>Lemoine</nom>
+            <prenom>Paul</prenom>
+            <contact>paul.lemoine@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>3</id>
+        <nom>Rio</nom>
+        <espece>Oiseau</espece>
+        <race>Perroquet</race>
+        <age>2</age>
+        <proprietaire>
+            <nom>Lemoine</nom>
+            <prenom>Paul</prenom>
+            <contact>paul.lemoine@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>3</id>
+        <nom>Rio</nom>
+        <espece>Oiseau</espece>
+        <race>Perroquet</race>
+        <age>2</age>
+        <proprietaire>
+            <nom>Lemoine</nom>
+            <prenom>Paul</prenom>
+            <contact>paul.lemoine@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>3</id>
+        <nom>Rio</nom>
+        <espece>Oiseau</espece>
+        <race>Perroquet</race>
+        <age>2</age>
+        <proprietaire>
+            <nom>Lemoine</nom>
+            <prenom>Paul</prenom>
+            <contact>paul.lemoine@example.com</contact>
+        </proprietaire>
+    </animal>
+    <animal>
+        <id>3</id>
+        <nom>Rio</nom>
+        <espece>Oiseau</espece>
+        <race>Perroquet</race>
+        <age>2</age>
+        <proprietaire>
+            <nom>Lemoine</nom>
+            <prenom>Paul</prenom>
+            <contact>paul.lemoine@example.com</contact>
+        </proprietaire>
+    </animal>
+</animaux>

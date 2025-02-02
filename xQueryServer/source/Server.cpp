@@ -94,10 +94,11 @@ std::string Server::getRequestedResource()
     read(clientSocket, buffer, BUFFER_SIZE - 1);
 
     std::string stringBuffer(buffer);
+
     std::istringstream requestStream(stringBuffer);
 
     if (std::getline(requestStream, resource, ' ') && std::getline(requestStream, resource, ' '))
-        return "data" + resource;
+        return resource;
 
     return "/";
 }
@@ -114,7 +115,7 @@ void Server::run()
     {
         acceptConnection();
         std::string resource = getRequestedResource();
-        XQueryProcess xquery(resource);
+        XQueryProcess xquery("data/xquery" + resource);
         std::string response = xquery.getResponse();
         sendResponse(response);
         close(clientSocket);

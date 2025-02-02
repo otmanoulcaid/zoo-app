@@ -6,7 +6,9 @@ services:
     image: custom-nginx:latest
     container_name: nginx
     ports:
-      - 443:443
+      - 80:80
+    volumes:
+      - ./public:/var/www/public:ro
     depends_on:
       - xquery
     networks:
@@ -17,18 +19,9 @@ services:
     image: custom-xquery:latest
     container_name: xquery-server
     volumes:
-      - xqueryv:/source/data
+      - ./public/data:/source/data
     networks:
       - my_network
-
-volumes:
-
-  xqueryv:
-    driver: local
-    driver_opts:
-      type: bind
-      o: bind
-      device: "./public/data/xquery"
 
 networks:
   my_network:
