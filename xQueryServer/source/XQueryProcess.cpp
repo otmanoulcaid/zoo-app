@@ -9,7 +9,7 @@ XQueryProcess::XQueryProcess(std::string ressource) : __ressource(ressource),
 void    XQueryProcess::execute(int fd)
 {
     char *bin;
-    if (dup2(fd, STDOUT_FILENO))
+    if (dup2(fd, STDOUT_FILENO) == -1)
         __response.append("<h1>something goes wrong</h1>"), exit(1);
     bin = const_cast<char*>("/usr/bin/basex");
     char *argv [] = {bin, (char *)__ressource.c_str(), NULL};
@@ -39,7 +39,7 @@ void    XQueryProcess::processRequest()
     else if (!pid)
         close(pip[0]), execute(pip[1]);
     else
-        close(pip[1]), wait(NULL), readFromPipe(pip[0]);
+        close(pip[1]), wait(NULL), fflush(0), readFromPipe(pip[0]);
 }
 
 std::string XQueryProcess::getResponse()

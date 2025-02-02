@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<etudiants>
+    <etudiant cne="">
+        <nom></nom>
+        <filiere></filiere>
+        <smestre></smestre>
+        <img src=""/>
+    </etudiant>
+</etudiants>

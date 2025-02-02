@@ -30,15 +30,13 @@ std::string Server::createHttpResponse(const std::string& body)
     std::ostringstream  response;
 
     response << "HTTP/1.1 200 OK\r\n";
-
     response << "Date: " << getHttpDate() << "\r\n";
     response << "Content-Type: text/html; charset=UTF-8\r\n";
-    response << "Content-Length: 47\r\n";
+    response << "Content-Length: "<< body.size()<< "\r\n";
     response << "Connection: close\r\n";
     response << "Server: CustomCPPServer/1.0\r\n";
     response << "\r\n";
     response << body;
-    response << "\r\n";
 
     return response.str();
 }
@@ -99,7 +97,7 @@ std::string Server::getRequestedResource()
     std::istringstream requestStream(stringBuffer);
 
     if (std::getline(requestStream, resource, ' ') && std::getline(requestStream, resource, ' '))
-        return "data/" + resource;
+        return "data" + resource;
 
     return "/";
 }
@@ -107,7 +105,7 @@ std::string Server::getRequestedResource()
 void Server::sendResponse(const std::string& resource)
 {
     std::string response = createHttpResponse(resource);
-    write(clientSocket, response.c_str(), response.size());
+	send(clientSocket, response.c_str(), response.size(), 0);
 }
 
 void Server::run()
@@ -118,7 +116,6 @@ void Server::run()
         std::string resource = getRequestedResource();
         XQueryProcess xquery(resource);
         std::string response = xquery.getResponse();
-        std::cout << response;
         sendResponse(response);
         close(clientSocket);
         clientSocket = -1;

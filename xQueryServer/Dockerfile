@@ -1,9 +1,12 @@
-FROM openjdk:21-alpine
+FROM openjdk:21-slim
 
-RUN apk update -y && \
-apk add basex -y && \
-apk add make -y && \
-apk add g++ -y
+RUN apt update -y && \
+apt install g++ -y && \
+apt install make -y
+
+RUN apt install basex -y && \
+apt install libjing-java -y && \
+apt install libtagsoup-java -y
 
 WORKDIR /source
 

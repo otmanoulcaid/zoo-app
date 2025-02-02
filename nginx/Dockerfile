@@ -1,7 +1,9 @@
-FROM openjdk:21-alpine
+FROM openjdk:21-slim
 
-RUN apk add --no-cache nginx
+RUN apt update && apt install -y nginx
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.sh /nginx.sh
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+RUN chmod +x /nginx.sh
+
+ENTRYPOINT ["/nginx.sh"]

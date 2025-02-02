@@ -6,19 +6,9 @@ services:
     image: custom-nginx:latest
     container_name: nginx
     ports:
-      - 8000:80
+      - 443:443
     depends_on:
-      - xslt
       - xquery
-    networks:
-      - my_network
-
-  xslt:
-    build: ./XSLTServer
-    image: custom-xslt:latest
-    container_name: xslt-server
-    volumes:
-      - xsltv:/source/data
     networks:
       - my_network
 
@@ -32,12 +22,6 @@ services:
       - my_network
 
 volumes:
-  xsltv:
-    driver: local
-    driver_opts:
-      type: bind
-      o: bind
-      device: "./public/data/xslt"
 
   xqueryv:
     driver: local
