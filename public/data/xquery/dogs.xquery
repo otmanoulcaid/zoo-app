@@ -1,4 +1,4 @@
-let $animaux := doc("../xml/animal.xml")/animals/animal
+let $animaux := doc("../xml/animal.xml")/animaux/animal
 let $navbar := doc("navbar.xquery")/navbar
 return
     <html>

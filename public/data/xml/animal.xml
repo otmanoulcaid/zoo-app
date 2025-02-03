@@ -1,87 +1,178 @@
-<?xml version="1.0"?>
-<animaux>
-    <animal>
-        <id>1</id>
-        <nom>Max</nom>
-        <espece>Chien</espece>
-        <race>Golden Retriever</race>
-        <age>5</age>
-        <proprietaire>
-            <nom>Dupont</nom>
-            <prenom>Jean</prenom>
-            <contact>jean.dupont@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>2</id>
-        <nom>Mimi</nom>
-        <espece>Chat</espece>
-        <race>Siamois</race>
-        <age>3</age>
-        <proprietaire>
-            <nom>Martin</nom>
-            <prenom>Claire</prenom>
-            <contact>claire.martin@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>3</id>
-        <nom>Rio</nom>
-        <espece>Oiseau</espece>
-        <race>Perroquet</race>
-        <age>2</age>
-        <proprietaire>
-            <nom>Lemoine</nom>
-            <prenom>Paul</prenom>
-            <contact>paul.lemoine@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>3</id>
-        <nom>Rio</nom>
-        <espece>Oiseau</espece>
-        <race>Perroquet</race>
-        <age>2</age>
-        <proprietaire>
-            <nom>Lemoine</nom>
-            <prenom>Paul</prenom>
-            <contact>paul.lemoine@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>3</id>
-        <nom>Rio</nom>
-        <espece>Oiseau</espece>
-        <race>Perroquet</race>
-        <age>2</age>
-        <proprietaire>
-            <nom>Lemoine</nom>
-            <prenom>Paul</prenom>
-            <contact>paul.lemoine@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>3</id>
-        <nom>Rio</nom>
-        <espece>Oiseau</espece>
-        <race>Perroquet</race>
-        <age>2</age>
-        <proprietaire>
-            <nom>Lemoine</nom>
-            <prenom>Paul</prenom>
-            <contact>paul.lemoine@example.com</contact>
-        </proprietaire>
-    </animal>
-    <animal>
-        <id>3</id>
-        <nom>Rio</nom>
-        <espece>Oiseau</espece>
-        <race>Perroquet</race>
-        <age>2</age>
-        <proprietaire>
-            <nom>Lemoine</nom>
-            <prenom>Paul</prenom>
-            <contact>paul.lemoine@example.com</contact>
-        </proprietaire>
-    </animal>
-</animaux>
+<animals>
+	<animal>
+		<path>img/img-products/Beagle.jpeg</path>
+		<id>1</id>
+		<name>Beagle</name>
+		<espece>dog</espece>
+		<race>Beagle</race>
+		<description>Small to medium-sized dogs known for their friendly nature and strong sense of smell.</description>
+		<age>3</age>
+		<proprietaire>Sarah Miller</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Persian Cat.jpeg</path>
+		<id>2</id>
+		<name>Persian Cat</name>
+		<espece>cat</espece>
+		<race>Persian</race>
+		<description>Long-haired cats with a sweet, calm temperament and a love for lounging.</description>
+		<age>4</age>
+		<proprietaire>Jessica Turner</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Bengal Cat.jpeg</path>
+		<id>3</id>
+		<name>Bengal Cat</name>
+		<espece>cat</espece>
+		<race>Bengal</race>
+		<description>Wild-looking cats with a striking coat, very active and playful.</description>
+		<age>2</age>
+		<proprietaire>Kevin Lee</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Phoenicopterus.jpeg</path>
+		<id>4</id>
+		<name>Flamingo</name>
+		<espece>bird</espece>
+		<race>Phoenicopterus</race>
+		<description>Elegant wading birds known for their long legs and striking pink feathers.</description>
+		<age>5</age>
+		<proprietaire>Emily Roberts</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Canis lupus familiaris.jpeg</path>
+		<id>5</id>
+		<name>Wolf</name>
+		<espece>dog</espece>
+		<race>Canis lupus familiaris</race>
+		<description>Large, wild canines that live in packs and have a close-knit social structure.</description>
+		<age>6</age>
+		<proprietaire>Mark Johnson</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Ragdoll.jpeg</path>
+		<id>6</id>
+		<name>Ragdoll</name>
+		<espece>cat</espece>
+		<race>Ragdoll</race>
+		<description>Large, gentle cats that go limp when picked up, making them easy to handle.</description>
+		<age>2</age>
+		<proprietaire>James Brown</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/German Shepherd.webp</path>
+		<id>7</id>
+		<name>German Shepherd</name>
+		<espece>dog</espece>
+		<race>German Shepherd</race>
+		<description>Smart, versatile, and highly trainable dogs, often used as working dogs.</description>
+		<age>5</age>
+		<proprietaire>Linda Green</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Scottish Fold.png</path>
+		<id>8</id>
+		<name>Scottish Fold</name>
+		<espece>cat</espece>
+		<race>Scottish Fold</race>
+		<description>Distinctive cats with folded ears and a sweet, calm personality.</description>
+		<age>3</age>
+		<proprietaire>David White</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Golden Retriever.jpeg</path>
+		<id>9</id>
+		<name>Golden Retriever</name>
+		<espece>dog</espece>
+		<race>Golden Retriever</race>
+		<description>Friendly, reliable, and well-known for their loyalty and intelligence.</description>
+		<age>4</age>
+		<proprietaire>Rachel Adams</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Trochilidae.jpeg</path>
+		<id>10</id>
+		<name>Hummingbird</name>
+		<espece>bird</espece>
+		<race>Trochilidae</race>
+		<description>Small, vibrant birds known for their ability to hover and fly backward.</description>
+		<age>2</age>
+		<proprietaire>Julia Carter</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Haliaeetus leucocephalus.jpeg</path>
+		<id>11</id>
+		<name>Bald Eagle</name>
+		<espece>bird</espece>
+		<race>Haliaeetus leucocephalus</race>
+		<description>Powerful birds of prey with white heads and tails, known as a symbol of the United States.</description>
+		<age>7</age>
+		<proprietaire>Brian King</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Hereford.jpeg</path>
+		<id>12</id>
+		<name>Hereford Cow</name>
+		<espece>cow</espece>
+		<race>Hereford</race>
+		<description>A breed of cattle known for their high-quality beef and distinctive white faces.</description>
+		<age>5</age>
+		<proprietaire>George Thomas</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Holstein.jpeg</path>
+		<id>13</id>
+		<name>Holstein Cow</name>
+		<espece>cow</espece>
+		<race>Holstein</race>
+		<description>Black-and-white dairy cows known for their high milk production.</description>
+		<age>6</age>
+		<proprietaire>Tom Harris</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Jersey.jpeg</path>
+		<id>14</id>
+		<name>Jersey Cow</name>
+		<espece>cow</espece>
+		<race>Jersey</race>
+		<description>A small breed of dairy cattle, known for their high butterfat content in milk.</description>
+		<age>4</age>
+		<proprietaire>Patricia Lewis</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Labrador Retriever.jpeg</path>
+		<id>15</id>
+		<name>Labrador Retriever</name>
+		<espece>dog</espece>
+		<race>Labrador Retriever</race>
+		<description>Friendly, outgoing, and high-energy dogs, excellent as family pets.</description>
+		<age>4</age>
+		<proprietaire>James Wilson</proprietaire>
+	</animal>
+
+	<animal>
+		<path>img/img-products/Pavo cristatus.jpeg</path>
+		<id>16</id>
+		<name>Peacock</name>
+		<espece>bird</espece>
+		<race>Pavo cristatus</race>
+		<description>Male peafowls with an impressive tail, famous for their colorful feathers.</description>
+		<age>3</age>
+		<proprietaire>Sophia Johnson</proprietaire>
+	</animal>
+
+</animals>
