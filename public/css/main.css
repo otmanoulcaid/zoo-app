@@ -19,13 +19,13 @@ div a.add-animal{
 	border-radius: 5px;
 	font-size: 1.2rem;
 	margin-top: 50px;
-	color: #ababab;
+	color: hwb(0 51% 49%);
 	padding: 10px;
 }
 
 .add-animal:hover{
 	text-decoration : none;
-	color: #d1cdc7;
+	color: rgb(44, 44, 44);
 }
 
 /* #######################HomePage############### */
