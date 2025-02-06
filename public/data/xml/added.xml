@@ -1,0 +1,12 @@
+
+<animal>
+	<path>test</path>
+	<id>42</id>
+	<name>test</name>
+	<espece>test</espece>
+	<race>test</race>
+	<description>test test</description>
+	<age>42</age>
+	<proprietaire>test</proprietaire>
+</animal>
+		

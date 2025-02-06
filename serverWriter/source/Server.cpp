@@ -1,7 +1,7 @@
 #include "Server.hpp"
+#include <fstream>
 
-Server::Server() : serverSocket(-1),
-                    clientSocket(-1)
+Server::Server() : serverSocket(-1), clientSocket(-1)
 {
     memset(&serverAddr, 0, sizeof(serverAddr));
     createSocket();
@@ -27,12 +27,11 @@ std::string Server::getHttpDate()
 
 std::string Server::createHttpResponse(const std::string& body)
 {
-    std::ostringstream  response;
-
+    std::ostringstream response;
     response << "HTTP/1.1 200 OK\r\n";
     response << "Date: " << getHttpDate() << "\r\n";
     response << "Content-Type: text/html; charset=UTF-8\r\n";
-    response << "Content-Length: "<< body.size()<< "\r\n";
+    response << "Content-Length: " << body.size() << "\r\n";
     response << "Connection: close\r\n";
     response << "Server: CustomCPPServer/1.0\r\n";
     response << "\r\n";
@@ -64,12 +63,13 @@ void Server::bindSocket()
 
 void Server::listenSocket()
 {
-    if (listen(serverSocket, 10) < 0)
+    if (listen(serverSocket, 3) < 0)
     {
         perror("Listen failed");
         close(serverSocket);
         exit(EXIT_FAILURE);
     }
+    std::cout << "Server is listening on port " << PORT << "..." << std::endl;
 }
 
 void Server::acceptConnection()
@@ -83,29 +83,29 @@ void Server::acceptConnection()
     }
 }
 
-
-std::string Server::getRequestedResource()
+void Server::handlePostRequest()
 {
-    std::string resource;
-    
-    char buffer[BUFFER_SIZE];
+    char buffer[BUFFER_SIZE] = {0};
+    std::string body;
+    bool headersEnded = false;
+
     memset(buffer, 0, BUFFER_SIZE);
-    read(clientSocket, buffer, BUFFER_SIZE - 1);
-
-    std::string stringBuffer(buffer);
-
-    std::istringstream requestStream(stringBuffer);
-
-    if (std::getline(requestStream, resource, ' ') && std::getline(requestStream, resource, ' '))
-        return resource;
-
-    return "/";
+    read(clientSocket, buffer, sizeof(buffer));
+	body.append(buffer);
+	size_t pos = body.find("\r\n\r\n");
+	body = body.substr(pos + 4);
+    std::ofstream outFile("data/xml/added.xml", std::ios::app);
+    if (outFile.is_open())
+    {
+        outFile << body;
+        outFile.close();
+    }
 }
 
-void Server::sendResponse(const std::string& resource)
+void Server::sendResponse()
 {
-    std::string response = createHttpResponse(resource);
-	send(clientSocket, response.c_str(), response.size(), 0);
+    std::string response = createHttpResponse("<h1 style=\"text-align:center\">XML data reçu avec succes.</h1>");
+    send(clientSocket, response.c_str(), response.size(), 0);
 }
 
 void Server::run()
@@ -113,15 +113,14 @@ void Server::run()
     while (true)
     {
         acceptConnection();
-        std::string resource = getRequestedResource();
-        XQueryProcess xquery("data/xquery" + resource);
-        std::string response = xquery.getResponse();
-        sendResponse(response);
+        char buffer[BUFFER_SIZE];
+        memset(buffer, 0, BUFFER_SIZE);
+		handlePostRequest();
+		sendResponse();
         close(clientSocket);
         clientSocket = -1;
     }
 }
-
 
 int main()
 {

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>new animal</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"/>
+	<script src="js/script.js"></script>
+
+</head>
+<body id="body">
+	<navbar>
+		<nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-around">
+			<div class=" navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item mx-2 nav-active"><a href="http://10.13.100.48/all" class="nav-link">Home</a></li>
+					<li class="nav-item mx-2"><a href="http://10.13.100.48/cats" class="nav-link">cats</a></li>
+					<li class="nav-item mx-2"><a href="http://10.13.100.48/dogs" class="nav-link">dogs</a></li>
+					<li class="nav-item mx-2"><a href="http://10.13.100.48/birds" class="nav-link">birds</a></li>
+					<li class="nav-item mx-2"><a href="http://10.13.100.48/cows" class="nav-link">cows</a></li>
+				</ul>
+			</div>
+			<div>
+				<a class="btn-yello add-animal" href="http://10.13.100.48/new">add animal</a>
+			</div>
+		</nav>
+		<div id="container" class="container mt-5">
+			<h2 class="mb-4">Add Animal</h2>
+			<form action="">
+				<div class="row mb-3">
+					<div class="col-md-6">
+						<label for="path" class="form-label">Image Path</label>
+						<input value="test" required type="text" class="form-control" id="path" name="path" placeholder="Enter image path">
+					</navbar>
+				</div>
+				<div class="col-md-6">
+					<label for="id" class="form-label">ID</label>
+					<input value="42" required type="number" class="form-control" id="id" name="id" placeholder="Enter ID">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label for="name" class="form-label">Name</label>
+					<input  value="test" required type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+				</div>
+				<div class="col-md-6">
+					<label for="espece" class="form-label">Species</label>
+					<input value="test" required type="text" class="form-control" id="espece" name="espece" placeholder="Enter species">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label for="race" class="form-label">Race</label>
+					<input value="test" required type="text" class="form-control" id="race" name="race" placeholder="Enter race">
+				</div>
+				<div class="col-md-6">
+					<label for="age" class="form-label">Age</label>
+					<input value="42" required type="number" class="form-control" id="age" name="age" placeholder="Enter age">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label for="proprietaire" class="form-label">Owner</label>
+					<input value="test" required type="text" class="form-control" id="proprietaire" name="proprietaire" placeholder="Enter owner name">
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="description" class="form-label">Description</label>
+				<textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+			</div>
+
+			<a href="#" class="btn btn-primary">Add Animal</a>
+		</form>
+	</div>
+</body>
+</html>
+	

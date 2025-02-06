@@ -11,6 +11,7 @@ services:
       - ./public:/var/www/public:ro
     depends_on:
       - xquery
+      - writer
     networks:
       - my_network
 
@@ -18,6 +19,15 @@ services:
     build: ./xQueryServer
     image: custom-xquery:latest
     container_name: xquery-server
+    volumes:
+      - ./public/data:/source/data
+    networks:
+      - my_network
+
+  writer:
+    build: ./serverWriter
+    image: writer:latest
+    container_name: writer
     volumes:
       - ./public/data:/source/data
     networks:

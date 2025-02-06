@@ -10,9 +10,19 @@ http {
         listen 80;
 		include /etc/nginx/mime.types;
 	    root /var/www/public;
+		index index.html;
+
+        location /new {
+			alias /var/www/public;
+            index new.html;
+        }
 
         location /all {
             proxy_pass http://xquery-server:8008/all.xquery;
+        }
+
+        location /writer {
+            proxy_pass http://writer:8009;
         }
         
         location /dogs {
@@ -25,6 +35,10 @@ http {
 
         location /birds {
             proxy_pass http://xquery-server:8008/birds.xquery;
+        }
+
+        location /cows {
+            proxy_pass http://xquery-server:8008/cows.xquery;
         }
     }
 }

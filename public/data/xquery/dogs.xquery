@@ -1,4 +1,4 @@
-let $animaux := doc("../xml/animal.xml")/animaux/animal
+let $animaux := doc("../xml/animal.xml")/animals/animal[espece = 'dog']
 let $navbar := doc("navbar.xquery")/navbar
 return
     <html>
@@ -12,19 +12,19 @@ return
             <div class="container">
                 <div class="row">
                     {
-					for $animal in $animaux
-					return
-						<div class="mx-auto col-md-6 col-lg-4">
-							<div class="featured-container p-5">
-								<img src="img/img-products/product-12.png" class="img-fluid" alt="product"/>
-								<a href="#" class="featured-store-link text-captilaze">add to cart</a>
-							</div>
-							<h6 class="text-capitalize text-center my-2">special product</h6>
-							<h6 class="text-center">
-								<span class="text-muted old-price mx-2">$200</span>
-								<span>$100</span>
-							</h6>
-						</div>
+                    for $animal in $animaux
+                    return
+                        <div class="mx-auto col-md-6 col-lg-4">
+                            <div class="featured-container p-5">
+                                <img src="imgs/{ $animal/path }" class="img-fluid" alt="product"/>
+                                <a href="#" class="featured-store-link text-capitalize">add to cart</a>
+                            </div>
+                            <h6 class="text-capitalize text-center my-2">special product</h6>
+                            <h6 class="text-center">
+                                <span class="text-muted old-price mx-2">$200</span>
+                                <span>$100</span>
+                            </h6>
+                        </div>
                     }
                 </div>
             </div>
